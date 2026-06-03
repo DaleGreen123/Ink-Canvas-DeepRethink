@@ -4762,7 +4762,7 @@
                                         <TextBlock
                                             Width="250"
                                             Margin="2,0"
-                                            Text="https://github.com/InkCanvas/Ink-Canvas-Artistry"
+                                            Text="https://github.com/DaleGreen123/Ink-Canvas-DeepRethink"
                                             TextWrapping="Wrap" />
                                     </Hyperlink>
                                 </TextBlock>
@@ -4776,11 +4776,11 @@
                                         Width="20"
                                         Height="20"
                                         RenderOptions.BitmapScalingMode="HighQuality"
-                                        Source="/Resources/DeveloperAvatars/ChangSakura.png" />
+                                        Source="/Resources/DeveloperAvatars/DaleGreen123.png" />
                                     <TextBlock
                                         FontSize="15"
                                         Foreground="{DynamicResource SettingsPageForeground}"
-                                        Text="CJ Wu (ChangSakura)" />
+                                        Text="Horizon-Dale(DaleGreen123)" />
                                 </WrapPanel>
 
                                 <Line
@@ -4950,7 +4950,7 @@
                                             Height="20"
                                             Margin="3,0"
                                             RenderOptions.BitmapScalingMode="HighQuality"
-                                            Source="/Resources/DeveloperAvatars/ChangSakura.png">
+                                            Source="/Resources/DeveloperAvatars/DaleGreen123.png">
                                             <Image.Clip>
                                                 <EllipseGeometry
                                                     Center="10,10"
@@ -4961,7 +4961,7 @@
                                         <TextBlock
                                             FontSize="15"
                                             Foreground="{DynamicResource SettingsPageForeground}"
-                                            Text="ChangSakura" />
+                                            Text="Horizon-Dale(DaleGreen123)" />
                                     </ikw:SimpleStackPanel>
                                 </WrapPanel>
                             </ikw:SimpleStackPanel>

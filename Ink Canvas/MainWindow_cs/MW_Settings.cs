@@ -1055,7 +1055,7 @@ namespace Ink_Canvas
 
         private void HyperlinkSourceToPresentRepository_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/InkCanvas/Ink-Canvas-Artistry");
+            Process.Start("https://github.com/DaleGreen123/Ink-Canvas-DeepRethink");
             HideSubPanels();
         }
 
