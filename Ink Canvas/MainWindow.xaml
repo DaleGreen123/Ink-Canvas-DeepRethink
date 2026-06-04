@@ -4950,7 +4950,7 @@
                                             Height="20"
                                             Margin="3,0"
                                             RenderOptions.BitmapScalingMode="HighQuality"
-                                            Source="/Resources/DeveloperAvatars/DaleGreen123.png">
+                                            Source="/Resources/DeveloperAvatars/ChangSakura.png">
                                             <Image.Clip>
                                                 <EllipseGeometry
                                                     Center="10,10"
@@ -4961,7 +4961,7 @@
                                         <TextBlock
                                             FontSize="15"
                                             Foreground="{DynamicResource SettingsPageForeground}"
-                                            Text="Horizon-Dale(DaleGreen123)" />
+                                            Text="ChangSakura" />
                                     </ikw:SimpleStackPanel>
                                 </WrapPanel>
                             </ikw:SimpleStackPanel>
