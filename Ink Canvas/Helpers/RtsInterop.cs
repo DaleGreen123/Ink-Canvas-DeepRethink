@@ -1,1 +1,1 @@
-// RTS COM Interop — 已废弃，改用 WM_POINTER (PointerInputManager)
+// RtsInterop — 已弃用

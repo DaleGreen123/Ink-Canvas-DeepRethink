@@ -12,8 +12,6 @@ namespace Ink_Canvas
         Timer timerCheckPPT = new Timer();
         Timer timerKillProcess = new Timer();
         Timer timerCheckAutoFold = new Timer();
-        string AvailableLatestVersion = null;
-        Timer timerCheckAutoUpdateWithSilence = new Timer();
         Timer timerCheckTouchDevices = new Timer();
         private int lastTabletDeviceCount = -1;
         bool isHidingSubPanelsWhenInking = false; // 避免书写时触发二次关闭二级菜单导致动画不连续
@@ -26,8 +24,6 @@ namespace Ink_Canvas
             timerKillProcess.Interval = 5000;
             timerCheckAutoFold.Elapsed += timerCheckAutoFold_Elapsed;
             timerCheckAutoFold.Interval = 1500;
-            timerCheckAutoUpdateWithSilence.Elapsed += timerCheckAutoUpdateWithSilence_Elapsed;
-            timerCheckAutoUpdateWithSilence.Interval = 1000 * 60 * 60;
 
             timerCheckTouchDevices.Elapsed += TimerCheckTouchDevices_Elapsed;
             timerCheckTouchDevices.Interval = 1000;
@@ -78,7 +74,6 @@ namespace Ink_Canvas
             catch { }
         }
 
-
         bool foldFloatingBarByUser = false, // 保持收纳操作不受自动收纳的控制
             unfoldFloatingBarByUser = false; // 允许用户在希沃软件内进行展开操作
 
@@ -126,33 +121,6 @@ namespace Ink_Canvas
                 }
             }
             catch { }
-        }
-
-        private void timerCheckAutoUpdateWithSilence_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Dispatcher.Invoke(() =>
-            {
-                try
-                {
-                    if ((!Topmost) || (inkCanvas.Strokes.Count > 0)) return;
-                }
-                catch (Exception ex)
-                {
-                    LogHelper.WriteLogToFile(ex.ToString(), LogHelper.LogType.Error);
-                }
-            });
-            try
-            {
-                if (AutoUpdateWithSilenceTimeComboBox.CheckIsInSilencePeriod(Settings.Startup.AutoUpdateWithSilenceStartTime, Settings.Startup.AutoUpdateWithSilenceEndTime))
-                {
-                    AutoUpdateHelper.InstallNewVersionApp(AvailableLatestVersion, true);
-                    timerCheckAutoUpdateWithSilence.Stop();
-                }
-            }
-            catch (Exception ex)
-            {
-                LogHelper.WriteLogToFile(ex.ToString(), LogHelper.LogType.Error);
-            }
         }
 
         /// <summary>

@@ -81,21 +81,7 @@ namespace Ink_Canvas
                     BoardToggleSwitchEnableNibMode.IsOn = false;
                     BoundsWidth = Settings.Advanced.FingerModeBoundsWidth;
                 }
-                if (Settings.Startup.IsAutoUpdate)
-                {
-                    ToggleSwitchIsAutoUpdate.IsOn = true;
-                    AutoUpdate();
-                }
-                IsAutoUpdateWithSilenceBlock.Visibility = Settings.Startup.IsAutoUpdate ? Visibility.Visible : Visibility.Collapsed;
-                if (Settings.Startup.IsAutoUpdateWithSilence)
-                {
-                    ToggleSwitchIsAutoUpdateWithSilence.IsOn = true;
-                }
-                AutoUpdateTimePeriodBlock.Visibility = Settings.Startup.IsAutoUpdateWithSilence ? Visibility.Visible : Visibility.Collapsed;
-
-                AutoUpdateWithSilenceTimeComboBox.InitializeAutoUpdateWithSilenceTimeComboBoxOptions(AutoUpdateWithSilenceStartTimeComboBox, AutoUpdateWithSilenceEndTimeComboBox);
-                AutoUpdateWithSilenceStartTimeComboBox.SelectedItem = Settings.Startup.AutoUpdateWithSilenceStartTime;
-                AutoUpdateWithSilenceEndTimeComboBox.SelectedItem = Settings.Startup.AutoUpdateWithSilenceEndTime;
+                // Auto-update functionality removed
 
                 ToggleSwitchFoldAtStartup.IsOn = Settings.Startup.IsFoldAtStartup;
             }

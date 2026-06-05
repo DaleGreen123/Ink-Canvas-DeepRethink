@@ -16,35 +16,6 @@ namespace Ink_Canvas
     {
         #region Behavior
 
-        private void ToggleSwitchIsAutoUpdate_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded) return;
-            Settings.Startup.IsAutoUpdate = ToggleSwitchIsAutoUpdate.IsOn;
-            IsAutoUpdateWithSilenceBlock.Visibility = ToggleSwitchIsAutoUpdate.IsOn ? Visibility.Visible : Visibility.Collapsed;
-            SaveSettingsToFile();
-        }
-        private void ToggleSwitchIsAutoUpdateWithSilence_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded) return;
-            Settings.Startup.IsAutoUpdateWithSilence = ToggleSwitchIsAutoUpdateWithSilence.IsOn;
-            AutoUpdateTimePeriodBlock.Visibility = Settings.Startup.IsAutoUpdateWithSilence ? Visibility.Visible : Visibility.Collapsed;
-            SaveSettingsToFile();
-        }
-
-        private void AutoUpdateWithSilenceStartTimeComboBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded) return;
-            Settings.Startup.AutoUpdateWithSilenceStartTime = (string)AutoUpdateWithSilenceStartTimeComboBox.SelectedItem;
-            SaveSettingsToFile();
-        }
-
-        private void AutoUpdateWithSilenceEndTimeComboBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            if (!isLoaded) return;
-            Settings.Startup.AutoUpdateWithSilenceEndTime = (string)AutoUpdateWithSilenceEndTimeComboBox.SelectedItem;
-            SaveSettingsToFile();
-        }
-
         private void ToggleSwitchRunAtStartup_Toggled(object sender, RoutedEventArgs e)
         {
             if (!isLoaded) return;
@@ -666,7 +637,7 @@ namespace Ink_Canvas
             int AutoDelSavedFilesDaysThreshold = Settings.Automation.AutoDelSavedFilesDaysThreshold;
             Settings = new Settings();
             Settings.Advanced.IsSpecialScreen = true;
-            Settings.Advanced.IsQuadIR = false;
+            Settings.Advanced.IsQuadIR = true;
             Settings.Advanced.TouchMultiplier = 0.3;
             Settings.Advanced.NibModeBoundsWidth = 5;
             Settings.Advanced.FingerModeBoundsWidth = 25;
@@ -679,7 +650,7 @@ namespace Ink_Canvas
             Settings.Advanced.IsEnableEdgeGestureUtil = false;
 
             Settings.Appearance.IsEnableDisPlayFloatBarText = false;
-            Settings.Appearance.IsEnableDisPlayNibModeToggler = false;
+            Settings.Appearance.IsEnableDisPlayNibModeToggler = true;
             Settings.Appearance.IsColorfulViewboxFloatingBar = false;
             Settings.Appearance.FloatingBarScale = 100.0;
             Settings.Appearance.BlackboardScale = 100.0;
@@ -704,7 +675,7 @@ namespace Ink_Canvas
             Settings.Automation.IsAutoFoldInPPTSlideShow = false;
             Settings.Automation.IsAutoKillPptService = false;
             Settings.Automation.IsAutoKillEasiNote = false;
-            Settings.Automation.IsSaveScreenshotsInDateFolders = false;
+            Settings.Automation.IsSaveScreenshotsInDateFolders = true;
             Settings.Automation.IsAutoSaveStrokesAtScreenshot = true;
             Settings.Automation.IsAutoSaveStrokesAtClear = true;
             Settings.Automation.IsAutoClearWhenExitingWritingMode = false;
@@ -712,11 +683,11 @@ namespace Ink_Canvas
             Settings.Automation.AutoDelSavedFiles = AutoDelSavedFilesDays;
             Settings.Automation.AutoDelSavedFilesDaysThreshold = AutoDelSavedFilesDaysThreshold;
 
-            Settings.PowerPointSettings.IsShowPPTNavigationBottom = false;
+            Settings.PowerPointSettings.IsShowPPTNavigationBottom = true;
             Settings.PowerPointSettings.IsShowBottomPPTNavigationPanel = true;
             Settings.PowerPointSettings.IsShowSidePPTNavigationPanel = true;
             Settings.PowerPointSettings.PowerPointSupport = true;
-            Settings.PowerPointSettings.IsShowCanvasAtNewSlideShow = true;
+            Settings.PowerPointSettings.IsShowCanvasAtNewSlideShow = false;
             Settings.PowerPointSettings.IsNoClearStrokeOnSelectWhenInPowerPoint = true;
             Settings.PowerPointSettings.IsShowStrokeOnSelectInPowerPoint = false;
             Settings.PowerPointSettings.IsAutoSaveStrokesInPowerPoint = true;
@@ -724,8 +695,8 @@ namespace Ink_Canvas
             Settings.PowerPointSettings.IsNotifyPreviousPage = false;
             Settings.PowerPointSettings.IsNotifyHiddenPage = false;
             Settings.PowerPointSettings.IsNotifyAutoPlayPresentation = true;
-            Settings.PowerPointSettings.IsEnableTwoFingerGestureInPresentationMode = false;
-            Settings.PowerPointSettings.IsEnableFingerGestureSlideShowControl = false;
+            Settings.PowerPointSettings.IsEnableTwoFingerGestureInPresentationMode = true;
+            Settings.PowerPointSettings.IsEnableFingerGestureSlideShowControl = true;
             Settings.PowerPointSettings.IsSupportWPS = true;
 
             Settings.Canvas.InkWidth = 2.5;
@@ -738,7 +709,7 @@ namespace Ink_Canvas
             Settings.Canvas.UsingWhiteboard = false;
             Settings.Canvas.HyperbolaAsymptoteOption = 0;
 
-            Settings.Gesture.MatrixTransformCenterPoint = MatrixTransformCenterPointOptions.CanvasCenterPoint;
+            Settings.Gesture.MatrixTransformCenterPoint = MatrixTransformCenterPointOptions.GestureOperationCenterPoint;
             Settings.Gesture.AutoSwitchTwoFingerGesture = true;
             Settings.Gesture.IsEnableTwoFingerTranslate = true;
             Settings.Gesture.IsEnableTwoFingerZoom = false;
@@ -748,11 +719,7 @@ namespace Ink_Canvas
             Settings.InkToShape.IsInkToShapeEnabled = true;
 
             Settings.Startup.IsEnableNibMode = false;
-            Settings.Startup.IsAutoUpdate = true;
-            Settings.Startup.IsAutoUpdateWithSilence = true;
-            Settings.Startup.AutoUpdateWithSilenceStartTime = "18:20";
-            Settings.Startup.AutoUpdateWithSilenceEndTime = "07:40";
-            Settings.Startup.IsFoldAtStartup = false;
+            Settings.Startup.IsFoldAtStartup = true;
         }
 
         private void BtnResetToSuggestion_Click(object sender, RoutedEventArgs e)

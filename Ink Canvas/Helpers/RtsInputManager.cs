@@ -1,1 +1,1 @@
-// RTS Input Manager — 已废弃，改用 WM_POINTER (PointerInputManager)
+// RtsInputManager — 已弃用

@@ -3099,36 +3099,36 @@
                                     Text="启动选项" />
                             </GroupBox.Header>
                             <ikw:SimpleStackPanel Spacing="5">
-                                <ikw:SimpleStackPanel Orientation="Horizontal">
+                                <ikw:SimpleStackPanel Orientation="Horizontal" Visibility="Collapsed">
                                     <ikw:SimpleStackPanel Width="50">
                                         <ui:ToggleSwitch
                                             Name="ToggleSwitchIsAutoUpdate"
                                             OffContent="关"
                                             OnContent="开"
-                                            Toggled="ToggleSwitchIsAutoUpdate_Toggled" />
+                                             Visibility="Collapsed" />
                                     </ikw:SimpleStackPanel>
                                     <TextBlock
                                         Margin="0,0,14,0"
                                         VerticalAlignment="Center"
                                         FontSize="14"
                                         Foreground="{DynamicResource SettingsPageForeground}"
-                                        Text="自动检查更新" />
+                                        Text="" />
                                 </ikw:SimpleStackPanel>
 
-                                <ikw:SimpleStackPanel x:Name="IsAutoUpdateWithSilenceBlock" Orientation="Horizontal">
+                                <ikw:SimpleStackPanel x:Name="IsAutoUpdateWithSilenceBlock" Visibility="Collapsed">
                                     <ikw:SimpleStackPanel Width="50">
                                         <ui:ToggleSwitch
                                             Name="ToggleSwitchIsAutoUpdateWithSilence"
                                             OffContent="关"
                                             OnContent="开"
-                                            Toggled="ToggleSwitchIsAutoUpdateWithSilence_Toggled" />
+                                             Visibility="Collapsed" />
                                     </ikw:SimpleStackPanel>
                                     <TextBlock
                                         Margin="0,0,14,0"
                                         VerticalAlignment="Center"
                                         FontSize="14"
                                         Foreground="{DynamicResource SettingsPageForeground}"
-                                        Text="静默更新" />
+                                        Text="" />
                                 </ikw:SimpleStackPanel>
                                 <Border
                                     Padding="12"
@@ -3161,7 +3161,7 @@
                                                         <ComboBox
                                                             x:Name="AutoUpdateWithSilenceStartTimeComboBox"
                                                             Width="90"
-                                                            SelectionChanged="AutoUpdateWithSilenceStartTimeComboBox_SelectionChanged" />
+                                                             />
                                                     </ikw:SimpleStackPanel>
                                                     <ikw:SimpleStackPanel Orientation="Horizontal">
                                                         <TextBlock
@@ -3174,7 +3174,7 @@
                                                         <ComboBox
                                                             x:Name="AutoUpdateWithSilenceEndTimeComboBox"
                                                             Width="90"
-                                                            SelectionChanged="AutoUpdateWithSilenceEndTimeComboBox_SelectionChanged" />
+                                                             />
                                                     </ikw:SimpleStackPanel>
                                                 </ikw:SimpleStackPanel>
                                                 <TextBlock

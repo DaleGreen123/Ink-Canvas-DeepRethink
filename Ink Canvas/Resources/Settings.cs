@@ -77,7 +77,7 @@ namespace Ink_Canvas
         public bool IsEnableTwoFingerRotationOnSelection { get; set; } = false;
 
         [JsonProperty("matrixTransformCenterPoint")]
-        public MatrixTransformCenterPointOptions MatrixTransformCenterPoint { get; set; } = MatrixTransformCenterPointOptions.CanvasCenterPoint;
+        public MatrixTransformCenterPointOptions MatrixTransformCenterPoint { get; set; } = MatrixTransformCenterPointOptions.GestureOperationCenterPoint;
     }
 
     public enum MatrixTransformCenterPointOptions
@@ -89,23 +89,11 @@ namespace Ink_Canvas
 
     public class Startup
     {
-        [JsonProperty("isAutoUpdate")]
-        public bool IsAutoUpdate { get; set; } = true;
-
-        [JsonProperty("isAutoUpdateWithSilence")]
-        public bool IsAutoUpdateWithSilence { get; set; } = false;
-
-        [JsonProperty("isAutoUpdateWithSilenceStartTime")]
-        public string AutoUpdateWithSilenceStartTime { get; set; } = "00:00";
-
-        [JsonProperty("isAutoUpdateWithSilenceEndTime")]
-        public string AutoUpdateWithSilenceEndTime { get; set; } = "00:00";
-
         [JsonProperty("isEnableNibMode")]
         public bool IsEnableNibMode { get; set; } = false;
 
         [JsonProperty("isFoldAtStartup")]
-        public bool IsFoldAtStartup { get; set; } = false;
+        public bool IsFoldAtStartup { get; set; } = true;
     }
 
     public class Appearance
@@ -162,7 +150,7 @@ namespace Ink_Canvas
         [JsonProperty("powerPointSupport")]
         public bool PowerPointSupport { get; set; } = true;
         [JsonProperty("isShowCanvasAtNewSlideShow")]
-        public bool IsShowCanvasAtNewSlideShow { get; set; } = true;
+        public bool IsShowCanvasAtNewSlideShow { get; set; } = false;
         [JsonProperty("isNoClearStrokeOnSelectWhenInPowerPoint")]
         public bool IsNoClearStrokeOnSelectWhenInPowerPoint { get; set; } = true;
         [JsonProperty("isShowStrokeOnSelectInPowerPoint")]
@@ -178,7 +166,7 @@ namespace Ink_Canvas
         [JsonProperty("isNotifyAutoPlayPresentation")]
         public bool IsNotifyAutoPlayPresentation { get; set; } = true;
         [JsonProperty("isEnableTwoFingerGestureInPresentationMode")]
-        public bool IsEnableTwoFingerGestureInPresentationMode { get; set; } = false;
+        public bool IsEnableTwoFingerGestureInPresentationMode { get; set; } = true;
         [JsonProperty("isEnableFingerGestureSlideShowControl")]
         public bool IsEnableFingerGestureSlideShowControl { get; set; } = true;
         [JsonProperty("isSupportWPS")]
@@ -243,7 +231,7 @@ namespace Ink_Canvas
         public bool IsAutoKillEasiNote { get; set; } = false;
 
         [JsonProperty("isSaveScreenshotsInDateFolders")]
-        public bool IsSaveScreenshotsInDateFolders { get; set; } = false;
+        public bool IsSaveScreenshotsInDateFolders { get; set; } = true;
 
         [JsonProperty("isAutoSaveStrokesAtScreenshot")]
         public bool IsAutoSaveStrokesAtScreenshot { get; set; } = false;
@@ -261,7 +249,7 @@ namespace Ink_Canvas
         public string AutoSavedStrokesLocation = @"D:\Ink Canvas";
 
         [JsonProperty("autoDelSavedFiles")]
-        public bool AutoDelSavedFiles = false;
+        public bool AutoDelSavedFiles = true;
 
         [JsonProperty("autoDelSavedFilesDaysThreshold")]
         public int AutoDelSavedFilesDaysThreshold = 15;
@@ -273,7 +261,7 @@ namespace Ink_Canvas
         public bool IsSpecialScreen { get; set; } = false;
 
         [JsonProperty("isQuadIR")]
-        public bool IsQuadIR { get; set; } = false;
+        public bool IsQuadIR { get; set; } = true;
 
         [JsonProperty("touchMultiplier")]
         public double TouchMultiplier { get; set; } = 0.25;
